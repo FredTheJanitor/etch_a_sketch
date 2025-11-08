@@ -24,6 +24,7 @@ body {
 }
 
 #main {
+    display:flex;
     border-radius: 2%;
     width: 70vw;
     height: 55vh;
