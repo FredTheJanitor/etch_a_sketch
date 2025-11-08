@@ -25,6 +25,10 @@ body {
 
 #main {
     display:flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
     border-radius: 2%;
     width: 70vw;
     height: 55vh;
@@ -44,4 +48,8 @@ body {
     background-color: rgb(85, 90, 94);
     box-shadow: 1vw 1vh 2vh rgb(20, 31, 39)
     
+}
+
+#gridSquare {
+    flex-grow: 1;
 }
