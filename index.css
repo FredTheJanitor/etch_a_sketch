@@ -3,55 +3,106 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
     background-color: rgb(10, 17, 22);
 }
 
-.container {
+
+#outer {
+    box-shadow: 3vw 3vw 2vw -4vw rgb(0, 255, 234) inset,
+                -2vw -2vw 1vw -2vw rgba(0, 6, 92, 0.644) inset,
+                -.25vw -.25vw .5vw .25vw rgba(0, 1, 43, 0.822) inset,
+                -.25vw -.25vw .25vw .1vw rgb(6, 0, 22) inset,
+                -.25vw -.25vw 1vw .01vw rgb(0, 0, 0) inset,  
+                1vw 1vw 3vh black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3vh;
-    /* width: 60vw;
-    height: 60vh; */
-    background-color: rgb(27, 45, 63);
+    margin: 2vw;
+    width: 33vw;
+    height: 45vw;
+    background-color: rgb(23, 52, 82);
     border-radius: 5%;
 }
-
-#outer {
-    box-shadow: 1vw 1vh 3vh black;
+#toolBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    width: 30vw;
+    height: 5vw;
+    border-radius: 1%;
+    border: 3px solid rgb(0, 37, 29);
+    margin: 2vw;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 
+                0vw 0vw 1vw -.2vw rgba(106, 252, 232, 0.384) inset,
+                -.25vw -.25vw .75vh -.2vw rgb(0, 14, 59),
+                .25vw .25vw .75vh -.2vw rgba(0, 255, 242, 0.199);
 }
-
 
 #controls {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70vw;
-    height: 10vh;
+    gap: 2vw;
+    width: 30vw;
+    height: 5vw;
     border-radius: 100%;
-    margin-top: 0;
+    margin: 2vw;
     background-color: rgb(85, 90, 94);
-    box-shadow: 1vw 1vh 2vh rgb(20, 31, 39)
+    box-shadow: 1vw 1vh 2vh rgb(20, 31, 39),
+                0vw 0vw 2vw .5vw rgb(255, 255, 255) inset,
+                -.25vw -.25vw .75vh -.2vw rgba(0, 14, 59, 0.959),
+                .25vw .25vw .75vh -.2vw rgba(0, 255, 242, 0.5),
+                0vw 0vw 1vh 0vw rgba(244, 188, 255, 0.938),
+                3vw 3vw 2vw -4vw rgb(0, 255, 234) inset,
+                -2vw -2vw 1vw -2vw rgba(0, 6, 92, 0.644) inset,
+                -.25vw -.25vw .5vw .25vw rgba(0, 1, 43, 0.822) inset,
+                -.25vw -.25vw .25vw .1vw rgb(6, 0, 22) inset,
+                -.25vw -.25vw 1vw .01vw rgb(0, 0, 0) inset,  
+                1vw 1vw 3vh black;
     
 }
 #main {
     display: flex;
-    flex-direction: row;
-    justify-content: stretch;
-    align-items: stretch;
+    margin-top: 1vw;
+    width: 30vw;
+    height: 30vw;
+    background-color: rgb(22, 22, 22);
     flex-wrap: wrap;
-    border-radius: 2%;
-    width: 70vw;
-    height: 55vh;
+    
     background-color: rgb(0, 0, 0);
-    box-shadow: .5vw .5vh rgb(20, 31, 39) inset;
-    gap: .5vw
+    box-shadow: 0vw 0vw 2vw .5vw rgb(255, 255, 255) inset,
+                -.25vw -.25vw .75vh -.2vw rgba(0, 14, 59, 0.959),
+                .25vw .25vw .75vh -.2vw rgba(0, 255, 242, 0.5),
+                0vw 0vw 1vh 0vw rgba(244, 188, 255, 0.938);
+    
     
     
 }
-#gridSquare {
-    background-color: white;
-    
+.newSquare {
+    box-sizing:border-box;
+    border: 1px solid rgb(0, 27, 25);
+    color: aliceblue;
+    background-color: rgba(214, 165, 255, 0.644);
+    flex: 1 1 auto;
+}
+.controlButton {
+    color: rgb(111, 255, 231);
+    border-radius: 100%;
+    padding: 1vw;
+    border: none;
+    background-color: rgb(85, 96, 110);
+    box-shadow: 1vw 1vh 2vh rgb(20, 31, 39),
+                /* 0vw 0vw 2vw .5vw rgb(255, 255, 255) inset, */
+                /* -.25vw -.25vw .5vh -.2vw rgba(0, 14, 59, 0.959),
+                .25vw .25vw .5vh -.2vw rgba(0, 255, 242, 0.5), */
+                /* 0vw 0vw 1vh 0vw rgba(244, 188, 255, 0.938),
+                3vw 3vw 2vw -4vw rgb(0, 255, 234) inset, */
+                -2vw -2vw 1vw -2vw rgba(0, 6, 92, 0.644) inset,
+                -.25vw -.25vw .5vw .25vw rgba(0, 1, 43, 0.822) inset,
+                -.25vw -.25vw .25vw .1vw rgb(6, 0, 22) inset,
+                -.25vw -.25vw 1vw .01vw rgb(0, 0, 0) inset,  
+                .5vw .5vw 1vh black;
 }
