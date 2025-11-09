@@ -3,13 +3,11 @@
 
 let gridSize = prompt('Enter a number 1-100');
 function createGrid(gridSize) {
-    for (let i = 0; i<gridSize; i++) {
+    for (let i = 0; i<(gridSize*gridSize); i++) {
         const gridSquare = document.createElement('div')
         gridSquare.id = 'gridSquare'
-        gridSquare.textContent = 'test'
-        gridSquare.style.backgroundColor = 'white'
-        gridSquare.style.flexBasis = `2/${gridSize}`
-        gridSquare.style.flexShrink = 'none'
+        // let squareSize = `(70/${gridSize})-.5`+"vw";
+        // gridSquare.style.flex = `0 0 ((1/${gridSize})*100)%`
         document.querySelector('#main').appendChild(gridSquare);
     }
 }
