@@ -1,7 +1,7 @@
 // make divs based on selector
 // need input: number of divs
 const main = document.querySelector('#main');
-let gridSize = prompt('Enter a number 1-100');
+let gridSize = 16;
 function createGrid(dimensions) {
     for (i=0;i<dimensions*dimensions;i++) {
         const newSquare = document.createElement('div');
