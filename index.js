@@ -5,6 +5,8 @@ const gridButton = document.getElementById('gridButton');
 const drawModeButton = document.getElementById('drawModeButton');
 const resetButton = document.getElementById('resetButton');
 
+// ------------ create original Grid using FlexBox ----------
+
 let gridSize = 16;
 function createGrid(dimensions) {
     for (i=0;i<dimensions*dimensions;i++) {
@@ -20,6 +22,11 @@ function createGrid(dimensions) {
 }
 createGrid(gridSize);
 // output: for # of divs create div
+
+// ---------------- Create Button Actions ---------------------
+
+
+
 
 // ---------------- Create Effects on Squares --------------------
 
