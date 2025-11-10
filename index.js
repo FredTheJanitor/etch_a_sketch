@@ -47,9 +47,20 @@ function removeColor() {
     document.querySelectorAll('.newSquare').forEach(square=>square.style.backgroundColor="")
 }
 
+// draw-mode bug:
+// when you select draw-mode the event listener is still present on squares with previous
+// listener mode, so right now it needs to be reset to add the new listener
+//  -- Goal: be able to switch drawing methods without resetting grid
+//  -- goal idea:  remove listeners from existing squares, and replace with new
+// also GridSize is auto resetting to 16, which might not really be an issue if the previous
+// is fixed but keep that in mind
+
 drawModeButton.addEventListener("click", selectDrawMode);
 function selectDrawMode() {
+    main.innerHTML='';
     drawMethod = prompt('select draw method');
+    createGrid(gridSize);
+    drawEffect();
 }
 
 
