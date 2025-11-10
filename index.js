@@ -21,11 +21,18 @@ function createGrid(dimensions) {
     }
 }
 createGrid(gridSize);
+drawEffect();
 // output: for # of divs create div
 
 // ---------------- Create Button Actions ---------------------
 
-
+gridButton.addEventListener("click", makeNewGrid)
+function makeNewGrid() {
+    main.innerHTML='';
+    const gridSize = prompt('enter grid size');
+    createGrid(gridSize);
+    drawEffect();
+}
 
 
 // ---------------- Create Effects on Squares --------------------
@@ -38,4 +45,3 @@ function drawEffect(e) {
     const squareBlocks = document.querySelectorAll('.newSquare');
     squareBlocks.forEach(square => square.addEventListener("mouseover", ()=>square.style.backgroundColor='black'));
 }
-drawEffect();
