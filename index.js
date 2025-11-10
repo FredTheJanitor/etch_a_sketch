@@ -24,8 +24,10 @@ function zenMode() {
     squareBlocks.forEach(square => square.addEventListener("mouseover", drawEffect));
 }
 
-function drawEffect() {
+// issue with drawEffect is it will change the backgroundColor of ALL squares
+// I want it to see just the square where mouseover happened, and change THAT ones style
+function drawEffect(e) {
     const squareBlocks = document.querySelectorAll('.newSquare');
-    squareBlocks.forEach(square => square.style.backgroundColor = 'black');
+    squareBlocks.forEach(square => square.addEventListener("mouseover", ()=>square.style.backgroundColor='black'));
 }
 zenMode();
