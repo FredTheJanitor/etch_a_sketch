@@ -16,3 +16,16 @@ function createGrid(dimensions) {
 }
 createGrid(gridSize);
 // output: for # of divs create div
+
+// ---------------- Create Effects on Squares --------------------
+
+function zenMode() {
+    const squareBlocks = document.querySelectorAll('.newSquare');
+    squareBlocks.forEach(square => square.addEventListener("mouseover", drawEffect));
+}
+
+function drawEffect() {
+    const squareBlocks = document.querySelectorAll('.newSquare');
+    squareBlocks.forEach(square => square.style.backgroundColor = 'black');
+}
+zenMode();
