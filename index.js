@@ -1,5 +1,5 @@
-// make divs based on selector
-// need input: number of divs
+// ------------ variables --------------------------
+
 const main = document.querySelector('#main');
 const gridButton = document.getElementById('gridButton');
 const drawModeButton = document.getElementById('drawModeButton');
