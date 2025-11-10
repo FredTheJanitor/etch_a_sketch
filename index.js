@@ -1,6 +1,10 @@
 // make divs based on selector
 // need input: number of divs
 const main = document.querySelector('#main');
+const gridButton = document.getElementById('gridButton');
+const drawModeButton = document.getElementById('drawModeButton');
+const resetButton = document.getElementById('resetButton');
+
 let gridSize = 16;
 function createGrid(dimensions) {
     for (i=0;i<dimensions*dimensions;i++) {
