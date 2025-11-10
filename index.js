@@ -19,6 +19,9 @@ createGrid(gridSize);
 
 // ---------------- Create Effects on Squares --------------------
 
+// i can switch out the event listener and background colors for variables which can be set by settings.
+let drawMethod
+let colorSelected
 
 function drawEffect(e) {
     const squareBlocks = document.querySelectorAll('.newSquare');
