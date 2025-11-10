@@ -26,12 +26,17 @@ drawEffect();
 
 // ---------------- Create Button Actions ---------------------
 
-gridButton.addEventListener("click", makeNewGrid)
+gridButton.addEventListener("click", makeNewGrid);
 function makeNewGrid() {
     main.innerHTML='';
     const gridSize = prompt('enter grid size');
     createGrid(gridSize);
     drawEffect();
+}
+
+resetButton.addEventListener("click", removeColor);
+function removeColor() {
+    document.querySelectorAll('.newSquare').forEach(square=>square.style.backgroundColor="")
 }
 
 
