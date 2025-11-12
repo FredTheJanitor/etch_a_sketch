@@ -38,9 +38,19 @@ function drawEffect(e) {
 gridButton.addEventListener("click", makeNewGrid);
 function makeNewGrid() {
     main.innerHTML='';
-    const gridSize = prompt('enter grid size');
+    const gridSize = prompt('enter grid size (1-100)');
+    if (gridSize > 100) {
+        alert(`ERROR: GRID TOO LARGE`);
+        createGrid(16);
+        drawEffect();
+    } else if (gridSize > 0 && gridSize <= 100) {
     createGrid(gridSize);
     drawEffect();
+    } else {
+        alert(`ERROR: UNKNOWN`);
+        createGrid(16);
+        drawEffect();
+    }
 }
 
 resetButton.addEventListener("click", removeColor);
