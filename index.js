@@ -29,7 +29,8 @@ function createGrid(dimensions) {
 }
 function drawEffect(e) {
     const squareBlocks = document.querySelectorAll('.newSquare');
-    squareBlocks.forEach(square => square.addEventListener(drawMethod, ()=>square.style.backgroundColor=colorSelected));
+    squareBlocks.forEach(square => square.addEventListener(drawMethod, ()=>square.style.backgroundColor = colorSelected));
+    console.log(colorSelected)
 }
 
 // ---------------- Create Button Actions ---------------------
@@ -55,14 +56,35 @@ function removeColor() {
 // also GridSize is auto resetting to 16, which might not really be an issue if the previous
 // is fixed but keep that in mind
 
+// drawmode bug2:
+// rainbow only selects the color once instead of for each square. function isnt running on each
+// individual div i guess.
+
 drawModeButton.addEventListener("click", selectDrawMode);
 function selectDrawMode() {
     main.innerHTML='';
-    drawMethod = prompt('select draw method');
+    drawMethod = prompt('type mouseover or mousedown');
+    const userInputColor = prompt('pick a color (try rainbow)');
+        if (userInputColor === "rainbow") {
+            colorSelected = getRandomColor();
+            console.log(colorSelected);
+        } else {
+            colorSelected = userInputColor
+        };
+        console.log(colorSelected)
+        console.log(colorSelected)
     createGrid(gridSize);
-    drawEffect();
+    drawEffect(colorSelected);
+    console.log(colorSelected);
 }
 
+    
+function getRandomColor() {
+    const r = Math.floor(Math.random()*256);
+    const g = Math.floor(Math.random()*256);
+    const b = Math.floor(Math.random()*256);
+    return `rgb(${r} ${g} ${b})`
+}
 
 // ---------------- Create Effects on Squares --------------------
 
