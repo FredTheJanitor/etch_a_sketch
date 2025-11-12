@@ -25,6 +25,7 @@ body {
     border-radius: 5%;
 }
 #toolBox {
+    color: aquamarine;
     display: flex;
     justify-content: center;
     align-items: center;

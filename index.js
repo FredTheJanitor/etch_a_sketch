@@ -4,13 +4,16 @@ const main = document.querySelector('#main');
 const gridButton = document.getElementById('gridButton');
 const drawModeButton = document.getElementById('drawModeButton');
 const resetButton = document.getElementById('resetButton');
+const toolBox = document.getElementById('toolBox');
 
 
 
 // ------------ create original Grid using FlexBox ----------
-let drawMethod = "mouseover"
-let colorSelected = "black"
+let drawMethod = "mouseover";
+let colorSelected;
+let userInputColor;
 let gridSize = 16;
+
 
 createGrid(gridSize);
 drawEffect();
@@ -30,9 +33,26 @@ function createGrid(dimensions) {
 function drawEffect(e) {
     const squareBlocks = document.querySelectorAll('.newSquare');
     squareBlocks.forEach(square => square.addEventListener(drawMethod, () => {
+        if (userInputColor === "rainbow") {
+            colorSelected = getRandomColor();
+            console.log(colorSelected);
+            square.style.backgroundColor = colorSelected
+            toolBox.textContent = `COLOR: ${userInputColor} | DRAW: ${drawMethod}`
+            
+        } else if (userInputColor == undefined) {
+            colorSelected = "black";
+            toolBox.textContent = `COLOR: black | DRAW: ${drawMethod}`
+            
+        } else {
+            colorSelected = userInputColor
+            toolBox.textContent = `COLOR: ${userInputColor} | DRAW: ${drawMethod}`
+            
+        };
         square.style.backgroundColor = colorSelected
         })
+        
     );
+    
     console.log(colorSelected)
 }
 
@@ -69,25 +89,13 @@ function removeColor() {
 // also GridSize is auto resetting to 16, which might not really be an issue if the previous
 // is fixed but keep that in mind
 
-// drawmode bug2:
-// rainbow only selects the color once instead of for each square. function isnt running on each
-// individual div i guess.
-
 drawModeButton.addEventListener("click", selectDrawMode);
 function selectDrawMode() {
     main.innerHTML='';
     drawMethod = prompt('type mouseover or mousedown');
-    const userInputColor = prompt('pick a color (try rainbow)');
-        if (userInputColor === "rainbow") {
-            colorSelected = getRandomColor;
-            console.log(colorSelected);
-        } else {
-            colorSelected = userInputColor
-        };
-        console.log(colorSelected)
-        console.log(colorSelected)
+    userInputColor = prompt('pick a color (try rainbow)');
     createGrid(gridSize);
-    drawEffect(colorSelected);
+    drawEffect(userInputColor);
     console.log(colorSelected);
 }
 
