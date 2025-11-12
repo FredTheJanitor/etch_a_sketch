@@ -29,7 +29,10 @@ function createGrid(dimensions) {
 }
 function drawEffect(e) {
     const squareBlocks = document.querySelectorAll('.newSquare');
-    squareBlocks.forEach(square => square.addEventListener(drawMethod, ()=>square.style.backgroundColor = colorSelected));
+    squareBlocks.forEach(square => square.addEventListener(drawMethod, () => {
+        square.style.backgroundColor = colorSelected
+        })
+    );
     console.log(colorSelected)
 }
 
@@ -76,7 +79,7 @@ function selectDrawMode() {
     drawMethod = prompt('type mouseover or mousedown');
     const userInputColor = prompt('pick a color (try rainbow)');
         if (userInputColor === "rainbow") {
-            colorSelected = getRandomColor();
+            colorSelected = getRandomColor;
             console.log(colorSelected);
         } else {
             colorSelected = userInputColor
